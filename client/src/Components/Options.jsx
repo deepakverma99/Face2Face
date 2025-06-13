@@ -3,7 +3,7 @@ import "../styles/Options.css";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Button, Typography } from "@mui/material";
 import { Assignment, Phone, PhoneDisabled, StopScreenShare,ScreenShare} from "@mui/icons-material";
-import { SocketContext } from "../context/SocketContext.jsx";
+import { SocketContext } from "../Context/SocketContext.jsx";
 
 const Options = ({ children }) => {
   const {

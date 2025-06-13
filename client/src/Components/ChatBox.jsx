@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { SocketContext } from "../context/SocketContext";
+import { SocketContext } from "../context/SocketContext.jsx";
 import "../styles/ChatBox.css"; // Style it accordingly
 
 const ChatBox = () => {

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import '../styles/Notifications.css'
-import { SocketContext } from '../Context/SocketContext'
+import { SocketContext } from '../Context/SocketContext.jsx'
 const Notifications = () => {
   const { answerCall, call, callAccepted} = useContext(SocketContext);
   return (

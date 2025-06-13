@@ -1,0 +1,20 @@
+.options1{
+    background-color: #f77f00;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.ansBtn{
+    width: 30%;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #131210;
+    color: white;
+}
+
+.h1{
+    margin: 10px auto;
+    color: rgb(83, 5, 56);
+}

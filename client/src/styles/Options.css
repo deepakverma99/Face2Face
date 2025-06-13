@@ -1,0 +1,130 @@
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.gridContainer1 {
+  width: 100%;
+}
+
+.container {
+  width: 600px;
+  margin: 35px 0;
+  padding: 0;
+}
+
+.margin {
+  margin-top: 20px;
+}
+
+.optContainer {
+  padding: 20px;
+  
+}
+
+.options {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid white;
+  background-color: brown;
+   border-radius: 5px;
+}
+
+.textfield {
+  background-color: #003049;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  padding: 15px;
+  width: 200px;
+  outline: none;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+.srcBtn{
+  margin-top: 10px;
+  padding: 10px;
+  background-color: blueviolet;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .container {
+    width: 90vw;
+    /* min-width: 200px; */
+  }
+  .textfield {
+    width: 60vw;
+    min-width: 120px;
+    margin-bottom: 2%;
+  }
+  
+}
+
+@media (max-width: 900px) {
+  .container {
+    width: 100vw;
+    /* min-width: 200px; */
+  }
+  .options{
+    width: 85%;
+    margin: auto;
+  }
+  .textfield {
+    width: 60vw;
+    min-width: 120px;
+    margin-bottom: 2%;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 100vw;
+    margin: 15px 0;
+    padding: 0;
+    
+  }
+  .options {
+    padding: 8px 5px;
+    width: 90%;
+    margin: auto;
+  }
+  .textfield {
+    width: 60vw;
+    min-width: 80px;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 2vw;
+  }
+  .margin{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    width: 100vw;
+    margin: 5px 0;
+  }
+  .textfield {
+    width: 60vw;
+    font-size: 14px;
+    padding: 8px;
+  }
+  .margin{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+

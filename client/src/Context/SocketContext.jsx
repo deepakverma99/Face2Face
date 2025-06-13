@@ -59,6 +59,14 @@ export const ContextProvider = ({ children }) => {
     };
   }, []);
 
+  // Set local video when stream is ready
+  useEffect(() => {
+    if (myVideo.current && stream) {
+      myVideo.current.srcObject = stream;
+    }
+  }, [stream]);
+
+
   const answerCall = () => {
     setCallAccepted(true);
     const peer = new Peer({ initiator: false, trickle: false, stream });

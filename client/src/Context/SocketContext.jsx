@@ -25,8 +25,8 @@ export const ContextProvider = ({ children }) => {
 
   useEffect(() => {
     // ✅ Connect socket once
-    // socket.current = io("https://face2face-evpj.onrender.com");
-    socket.current = io("http://localhost:5000");
+    socket.current = io("https://face2face-evpj.onrender.com");
+    // socket.current = io("http://localhost:5000");
 
     // ✅ Get socket ID
     socket.current.on("me", (id) => {

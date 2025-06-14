@@ -28,9 +28,10 @@ io.on("connection", (socket) => {
 		io.to(userToCall).emit("callUser", { signal: signalData, from, name });
 	});
 
-	socket.on("answerCall", (data) => {
-		io.to(data.to).emit("callAccepted", data.signal)
-	});
+	socket.on("answerCall", ({ signal, to, name }) => {
+  io.to(to).emit("callAccepted", { signal, name }); // 👈 send name here
+});
+
 
 	// 🆕 Chat message handling
 	socket.on("sendMessage", ({ message, name }) => {

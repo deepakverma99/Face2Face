@@ -25,7 +25,8 @@ export const ContextProvider = ({ children }) => {
 
   useEffect(() => {
     // ✅ Connect socket once
-    socket.current = io("https://face2face-evpj.onrender.com");
+    // socket.current = io("https://face2face-evpj.onrender.com");
+    socket.current = io("http://localhost:5000");
 
     // ✅ Get socket ID
     socket.current.on("me", (id) => {
@@ -72,7 +73,12 @@ export const ContextProvider = ({ children }) => {
     const peer = new Peer({ initiator: false, trickle: false, stream });
 
     peer.on("signal", (data) => {
-      socket.current.emit("answerCall", { signal: data, to: call.from });
+      socket.current.emit("answerCall", {
+  signal: data,
+  to: call.from,
+  name, // 👈 Add this line to send callee's name back
+});
+
     });
 
     peer.on("stream", (currentStream) => {
@@ -99,10 +105,17 @@ export const ContextProvider = ({ children }) => {
       if (userVideo.current) userVideo.current.srcObject = currentStream;
     });
 
-    socket.current.on("callAccepted", (signal) => {
-      setCallAccepted(true);
-      peer.signal(signal);
-    });
+    socket.current.on("callAccepted", ({ signal, name: calleeName }) => {
+  setCallAccepted(true);
+  peer.signal(signal);
+
+  // 👇 Update the call state with the callee's name
+  setCall((prevCall) => ({
+    ...prevCall,
+    name: calleeName,
+  }));
+});
+
 
     connectionRef.current = peer;
   };

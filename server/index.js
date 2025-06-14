@@ -29,13 +29,13 @@ io.on("connection", (socket) => {
 	});
 
 	socket.on("answerCall", ({ signal, to, name }) => {
-  io.to(to).emit("callAccepted", { signal, name }); // 👈 send name here
-});
+		io.to(to).emit("callAccepted", { signal, name }); // 👈 send name here
+	});
 
 
 	socket.on("leaveCall", ({ to }) => {
-  io.to(to).emit("callEnded");
-});
+    io.to(to).emit("callEnded"); // Send termination notice to the other user
+  });
 
 
 	// 🆕 Chat message handling

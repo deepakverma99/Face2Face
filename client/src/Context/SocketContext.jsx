@@ -25,8 +25,8 @@ export const ContextProvider = ({ children }) => {
 
   useEffect(() => {
     // ✅ Connect socket once
-    socket.current = io("https://face2face-evpj.onrender.com");
-    // socket.current = io("http://localhost:5000");
+    // socket.current = io("https://face2face-evpj.onrender.com");
+    socket.current = io("http://localhost:5000");
 
     // ✅ Get socket ID
     socket.current.on("me", (id) => {
@@ -121,10 +121,12 @@ export const ContextProvider = ({ children }) => {
   };
 
   const leaveCall = () => {
-    setCallEnded(true);
-    connectionRef.current?.destroy();
-    window.location.reload();
-  };
+  setCallEnded(true);
+  socket.current.emit("callEnded", { to: call.from }); // 👈 Notify other user
+  connectionRef.current?.destroy();
+  window.location.reload(); // Optional
+};
+
 
   const startScreenShare = async () => {
     try {

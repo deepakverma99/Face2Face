@@ -33,6 +33,11 @@ io.on("connection", (socket) => {
 });
 
 
+	socket.on("leaveCall", ({ to }) => {
+  io.to(to).emit("callEnded");
+});
+
+
 	// 🆕 Chat message handling
 	socket.on("sendMessage", ({ message, name }) => {
 		io.emit("receiveMessage", { message, name });

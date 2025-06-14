@@ -37,6 +37,7 @@ const Options = ({ children }) => {
                 onChange={(e) => setName(e.target.value)}
                 variant="outlined"
                 fullwidth="true"
+                required
               /><div className="margin">
               <CopyToClipboard text={me}>
                 <Button

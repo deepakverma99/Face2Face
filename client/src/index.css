@@ -6,7 +6,7 @@ body{
     font-family: "Montserrat", sans-serif;
     /* background-color:#003049; */
     color: white;
-    touch-action: none; /* Disables scroll gestures */
+    scroll-behavior: smooth; /* Disables scroll gestures */
       margin: 0;
   background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
   min-height: 100vh;

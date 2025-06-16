@@ -121,12 +121,10 @@ export const ContextProvider = ({ children }) => {
   };
 
   const leaveCall = () => {
-  setCallEnded(true);
-  socket.current.emit("callEnded", { to: call.from }); // 👈 Notify other user
-  connectionRef.current?.destroy();
-  window.location.reload(); // Optional
-};
-
+    setCallEnded(true);
+    connectionRef.current?.destroy();
+    window.location.reload();
+  };
 
   const startScreenShare = async () => {
     try {

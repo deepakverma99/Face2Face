@@ -13,7 +13,7 @@ const VideoPalyer = () => {
           <p className="name">{name || "Name"}</p>
           <video
             className="video"
-            muted
+            // muted
             ref={myVideo}
             playsInline
             autoPlay
